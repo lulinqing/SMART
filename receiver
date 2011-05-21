@@ -1,0 +1,11 @@
+#!/bin/sh
+
+port=1512
+log_file='/tmp/SMART.log'
+cat /dev/null > $log_file
+
+while :; do
+    content=`nc -l $port`
+    echo `date +%s` @ $content >> $log_file
+    echo `date +%s` @ $content
+done

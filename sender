@@ -1,0 +1,17 @@
+#!/bin/sh
+
+port=1512
+
+if [ $# -lt 2 ]; then
+    echo "Usage:"
+    echo "$0 [receiver_addr] [data]"
+    exit
+fi
+
+addr=$1
+shift
+content=$@
+
+nc $addr $port << EOF
+$content
+EOF
