@@ -1,7 +1,7 @@
 #!/bin/sh
 
 port=1512
-log_file='/tmp/SMART.log'
+log_file='/var/www/html/SMART.log'
 cat /dev/null > $log_file
 
 while :; do

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+log_file='/var/www/html/SMART.log'
+
+if [ $UID -ne 0 ]; then
+    echo "WARN: Need to be root"
+    exit
+fi
+
+service httpd start
+touch $log_file
+chmod a+w $log_file
