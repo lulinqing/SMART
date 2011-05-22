@@ -1,0 +1,14 @@
+1- INSTALL
+    Run "installer" as root
+
+2- START
+    Run "receiver". You can choose a number of port.
+    If no port number is given, it will use 1512 as default.
+
+3- RULE
+    SMART.log :
+    [port_number] [time_stamp] @@ [data]
+
+    "port_number" identifies the source of data. (Senders should use different port numbers.)
+    "time_stamp" records the time of the data received.
+    "data" contains the information we need for SMART.

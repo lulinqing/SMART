@@ -3,7 +3,7 @@
 log_file='/var/www/html/SMART.log'
 
 if [ $UID -ne 0 ]; then
-    echo "WARN: Need to be root"
+    echo "ERROR: Need to be root"
     exit
 fi
 

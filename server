@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'sinatra'
+
+get '/' do
+    'Hello World!</p>
+    <a href="readme">READ ME</a></p>
+    <a href="log">SMART.log</a></p>
+    '
+end
+
+get '/readme' do
+    File.readlines("README")
+end
+
+get '/log' do
+    f = File.open("SMART.log")
+    f.each { |line| print line,'</p>' }
+    f.close
+
+end
+
