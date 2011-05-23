@@ -5,7 +5,7 @@ require 'sinatra'
 
 get '/' do
     'Hello World!</p>
-    <a href="readme">READ ME</a></p>
+    <a href="readme">README</a></p>
     <a href="log">SMART.log</a></p>
     '
 end
@@ -15,9 +15,14 @@ get '/readme' do
 end
 
 get '/log' do
+    log='<meta http-equiv="refresh" content="10">'
     f = File.open("SMART.log")
-    f.each { |line| print line,'</p>' }
+    f.each { |line|
+        log+=line
+        log+='</p>'
+    }
     f.close
+    log
 
 end
 
