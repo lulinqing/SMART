@@ -72,3 +72,7 @@ end
 get '/0' do
     File.read("images/gdu-smart-unknown.png")
 end
+
+get '/alert' do
+    File.read("alarm-clock-elapsed.oga")
+end
