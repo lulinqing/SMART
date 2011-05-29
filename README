@@ -1,14 +1,22 @@
-1- INSTALL
-    Run "installer" as root
-
-2- START
-    Run "receiver". You can choose a number of port.
+1- START
+1.1- Run "receiver".
+    You can choose a number of port.
     If no port number is given, it will use 1512 as default.
 
-3- RULE
-    SMART.log :
-    [port_number] [time_stamp] @@ [data]
+1.2- Run "server".
+    You can watch on http://host_name:4567/
 
+2- RULE
+2.1- SMART.log
+    [port_number] @ [time_stamp] @@ [data]
     "port_number" identifies the source of data. (Senders should use different port numbers.)
     "time_stamp" records the time of the data received.
     "data" contains the information we need for SMART.
+2.2- SMART.criteria
+    Criterias for evaluating the data received.
+
+3- STATUS
+    Grey light means invalid data.
+    Green light means data in expected normal situation.
+    Yellow light means data over expected but not in danger.
+    Red light means data higher than dangerous line.

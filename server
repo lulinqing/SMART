@@ -4,25 +4,71 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
-    'Hello World!</p>
+    '
+    <h2>Status of Mechanism in Real Time (SMART)</h2></p>
+    <a href="status">Watch the Status</a> ( Refesh Automatically per 6 seconds )</p>
+    <a href="log">Check the log</a> ( Refesh Automatically per minute )</p>
+    <a href="criteria">Criteria of Checkpoints</a></p>
     <a href="readme">README</a></p>
-    <a href="log">SMART.log</a></p>
     '
 end
 
+get '/criteria' do
+    content='<a href="/">Back</a></p>'
+    f = File.open("SMART.criteria")
+    f.each { |line|
+        content+=line
+        content+='</p>'
+    }
+    f.close
+    content
+end
+
 get '/readme' do
-    File.readlines("README")
+    content='<a href="/">Back</a></p>'
+    f = File.open("README")
+    f.each { |line|
+        content+=line
+        content+='</p>'
+    }
+    f.close
+    content
 end
 
 get '/log' do
-    log='<meta http-equiv="refresh" content="10">'
+    content='<a href="/">Back</a></p><meta http-equiv="refresh" content="60">'
     f = File.open("SMART.log")
     f.each { |line|
-        log+=line
-        log+='</p>'
+        content+=line
+        content+='</p>'
     }
     f.close
-    log
-
+    content
 end
 
+get '/status' do
+    content='<a href="/">Back</a></p><meta http-equiv="refresh" content="6">'
+    f = File.open("SMART.status")
+    f.each { |line|
+        content+=line
+        content+='</p>'
+    }
+    f.close
+    content
+end
+
+get '/3' do
+    File.read("images/gdu-smart-failing.png")
+end
+
+get '/2' do
+    File.read("images/gdu-smart-threshold.png")
+end
+
+get '/1' do
+    File.read("images/gdu-smart-healthy.png")
+end
+
+get '/0' do
+    File.read("images/gdu-smart-unknown.png")
+end
