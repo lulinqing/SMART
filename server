@@ -74,5 +74,5 @@ get '/0' do
 end
 
 get '/alert' do
-    File.read("alarm-clock-elapsed.mp3")
+    File.read("sounds/alarm-clock-elapsed.mp3")
 end
