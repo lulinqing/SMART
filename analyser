@@ -3,10 +3,10 @@ import time
 
 def generate(content):
     timestamp=content.split('@@')[0].split('@')[1]
-    print 'timestamp:\t',timestamp
+#    print 'timestamp:\t',"-"+timestamp+"-"
     data=content.split('@@')[1]
 #    print 'data:\t\t',data
-    status.write(time.localtime(timestamp)+'\n')
+    status.write(time.strftime('%Y-%m-%d %X',time.localtime(float(timestamp)))+'\n')
     pointer=0
     for number in data.split():
         if pointer >= len(ruler):

@@ -12,7 +12,7 @@ log_file='SMART.log'
 
 while :; do
     content=`nc -l $port`
-    log="$port@`date +%s`@@ $content"
+    log="$port @ `date +%s` @@ $content"
     echo $log >> $log_file
     echo $log
     ./analyser
