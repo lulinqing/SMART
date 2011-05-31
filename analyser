@@ -19,7 +19,8 @@ def generate(content):
         elif int(number)<int(ruler[pointer][2]):
             status_line='<img src="2">'
         else:
-            status_line='<img src="3"><EMBED src="alert" width=0 height=0 type="audio/mpeg" loop=1 autostart="true"></EMBED>'
+#            status_line='<img src="3"><embed src="alert" width=0 height=0 type="audio/mpeg" loop=1 autostart="true"></embed>'
+            status_line='<img src="3"><embed src="alert" width=0 height=0 type="audio/mpeg">'
         status.write(status_line+ruler[pointer][0]+' : '+number+'\n')
 #        status.write(str(ruler[pointer])+'\n')
         pointer+=1
